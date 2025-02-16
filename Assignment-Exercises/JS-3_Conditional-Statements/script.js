@@ -1,28 +1,21 @@
 function checkAge() {
   // write your code here
-
   let ageInput = document.getElementById("ageInput").value;
-  let printResult = document.querySelector("#result");
   let category;
 
-  if (ageInput === "") {
-    printResult.innerHTML = "Invalid age. Please enter a valid number.";
-    return;
-  }
+  if (ageInput === "") return;
 
   ageInput = parseInt(ageInput);
 
   if (ageInput <= 0) {
     category = "Invalid age. Please enter a valid number.";
+  } else if (ageInput <= 12) {
+    category = "You are a(n) Child";
+  } else if (ageInput <= 19) {
+    category = "You are a(n) Teenager";
   } else {
-    if (ageInput <= 12) {
-      category = "Child";
-    } else if (ageInput <= 19) {
-      category = "Teenager";
-    } else {
-      category = "Adult";
-    }
+    category = "You are a(n) Adult";
   }
 
-  printResult.innerHTML = `You are a(n) ${category}.`;
+  document.querySelector("#result").innerHTML = category;
 }
