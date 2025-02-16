@@ -30,7 +30,7 @@ function demoFunctionScope() {
  - Use console.log() to display the return value in the console.
 ********************/
 
-var variable = demoFunctionScope();
+let variable = demoFunctionScope();
 console.log(variable);
 
 /********************
